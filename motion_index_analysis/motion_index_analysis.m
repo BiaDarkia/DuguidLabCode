@@ -24,7 +24,7 @@
 clearvars
 close all
 
-% User parameters
+% User defined parameters
 num_vid_to_analyse=1;                                             % ***** Edit this value *****
 
 % Import video_list.txt indexing information
