@@ -73,7 +73,7 @@ if exist(filename,'file')
             
             timevid=d_time:d_time:d_time*frameID;
             
-            [timevidreg,motionindexsqreg]=regularizemotion(timevid,motionindexsq);
+            [timevidreg,motionindexsqreg]=regularize_motion(timevid,motionindexsq);
             
             est=sprintf('.csv');
             filenamesave=sprintf('%s%s_%s_%d%s',video_data_path,date,file_num,frameID,est);
