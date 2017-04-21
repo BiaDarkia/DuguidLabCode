@@ -10,7 +10,7 @@
 % 1 - Place all video files in one folder and change video_data_path below
 % 2 - Rename the videos with the format: yymmdd_xxx where xxx is a unique 
 % file identifier, e.g. 160419_001.mp4                                    
-% 3 - Create the file movie_list.txt cataloguing the files you want       
+% 3 - Create the file video_list.txt cataloguing the files you want       
 % analysed and place this in the folder with the videos
 % 4 - Add this folder to your Matlab path
 % 5 - Run this script and choose your region of interest in each video,
