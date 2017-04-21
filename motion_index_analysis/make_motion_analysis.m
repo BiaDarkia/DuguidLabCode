@@ -91,7 +91,7 @@ if exist(filename,'file')
     motionindexsq(1,:)=motionindexsq(1,:)./(vid_height*vid_width);
     motionindexsq(2,:)=motionindexsq(2,:)./(length(xrange)*length(yrange));
     
-    [timevidreg,motionindexsqreg]=regularizemotion(timevid,motionindexsq);
+    [timevidreg,motionindexsqreg]=regularize_motion(timevid,motionindexsq);
     
     A   =[timevidreg', motionindexsqreg(1,:)'];
     Aroi=[timevidreg', motionindexsqreg(2,:)'];
