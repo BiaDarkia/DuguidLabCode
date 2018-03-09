@@ -28,9 +28,9 @@ close all
 num_vid_to_analyse=1;                                             % ***** Edit this value *****
 
 % Import video_list.txt indexing information
-video_data_path = sprintf('/Users/s1269481/Documents/MATLAB/video analysis scripts/Test video/');       % ***** Edit this value *****
-video_list      = strcat(video_data_path,'video_list');
-fid             = fopen(video_list);
+video_data_path = sprintf('/Volumes/Julia_muscimol_2017_2');       % ***** Edit this value *****
+% video_list      = strcat(video_data_path,'video_list');
+fid             = fopen('video_list.txt');
 text_data       = fscanf(fid, '%u %u', [2 inf]);
 fclose(fid);
 text_data=text_data';
