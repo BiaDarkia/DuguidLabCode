@@ -140,5 +140,16 @@ if dayID >= Mod2startday
         all_var.time_to_correct_avg_NoStim(1,dayID)                                                           = AvgTimeTrials_NoStim; 
         all_var.num_trials_to_correct_sem_NoStim(1,dayID)                                                     = SemNumTrials_NoStim; 
         all_var.time_to_correct_sem_NoStim(1,dayID)                                                           = SemTimeTrials_NoStim; 
+        
+        
+        all_var.Hit_OptoStim_times(1:length(Hit_times_OptoStim'),dayID)                            = Hit_times_OptoStim';
+        all_var.Miss_OptoStim_times(1:length(Miss_times_OptoStim'),dayID)                          = Miss_times_OptoStim';
+        all_var.FA_OptoStim_times(1:length(FA_times_OptoStim'),dayID)                              = FA_times_OptoStim';
+        all_var.CR_OptoStim_times(1:length(CR_times_OptoStim'),dayID)                              = CR_times_OptoStim';
+
+        all_var.Hit_NoStim_times(1:length(Hit_times_NoStim'),dayID)                            = Hit_times_NoStim';
+        all_var.Miss_NoStim_times(1:length(Miss_times_NoStim'),dayID)                          = Miss_times_NoStim';
+        all_var.FA_NoStim_times(1:length(FA_times_NoStim'),dayID)                              = FA_times_NoStim';
+        all_var.CR_NoStim_times(1:length(CR_times_NoStim'),dayID)                              = CR_times_NoStim';
     end
 end

@@ -139,6 +139,14 @@ all_var.time_to_correct_sem_NoStim                   = zeros(1, num_days);
 all_var.day_apparatus                                = zeros(1, num_days); 
 all_var.day_opto                                     = zeros(1, num_days); 
 
-
+% Events times
+all_var.Hit_OptoStim_times                           = zeros(500, num_days);
+all_var.Miss_OptoStim_times                          = zeros(500, num_days);
+all_var.FA_OptoStim_times                            = zeros(500, num_days);
+all_var.CR_OptoStim_times                            = zeros(500, num_days);
+all_var.Hit_NoStim_times                           = zeros(500, num_days);
+all_var.Miss_NoStim_times                          = zeros(500, num_days);
+all_var.FA_NoStim_times                            = zeros(500, num_days);
+all_var.CR_NoStim_times                            = zeros(500, num_days);
 end
 

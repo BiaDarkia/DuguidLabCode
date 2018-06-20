@@ -80,14 +80,10 @@ for mouse_ID = 1:numMatFiles; %for each mouse ...
     
     %% Handling variables loaded
     GettingVarPlottingGONOGO
+    
     fprintf('Plotting %s...\n', MouseName);
 
-    % Main individual mouse plot (summary)
-    PlottingIndividuals_GONOGO_Combined
-
-    if ~isempty(find(optoRecord,1)) % There have been some opto days        
-        PlottingIndividuals_GONOGO_Combined_Opto
-    end
+    PlottingIndividuals_GONOGO_laser_V2
     
 
     % HR vs FAR ratio

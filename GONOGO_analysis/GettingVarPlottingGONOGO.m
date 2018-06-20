@@ -39,11 +39,13 @@ PED_timed                                                           = all_var.PE
 PEI_timed                                                           = all_var.PEI_timed;
 GO_TE_timed                                                         = all_var.GO_TE_timed;
 NOGO_TE_timed                                                       = all_var.NOGO_TE_timed;
+
 % Events times
 Hit_times                                                           = all_var.Hit_times;
 Miss_times                                                          = all_var.Miss_times;
 FA_times                                                            = all_var.FA_times;
 CR_times                                                            = all_var.CR_times;
+
 % Correct Times
 CorrectTimes                                                        = all_var.Correct_Tr_Times; 
 CompletePEratio                                                     = all_var.complete_preemptive_ITI_ratio; 
@@ -124,3 +126,15 @@ AvgNumTrials_NoStim                                                 = all_var.nu
 AvgTimeTrials_NoStim                                                = all_var.time_to_correct_avg_NoStim(:, lastNonOptoDay+1 : end);
 SemNumTrials_NoStim                                                 = all_var.num_trials_to_correct_sem_NoStim(:, lastNonOptoDay+1 : end);
 SemTimeTrials_NoStim                                                = all_var.time_to_correct_sem_NoStim(:, lastNonOptoDay+1 : end);
+
+
+% Events times
+Hit_OptoStim_times                                                           = all_var.Hit_OptoStim_times;
+Miss_OptoStim_times                                                          = all_var.Miss_OptoStim_times;
+FA_OptoStim_times                                                            = all_var.FA_OptoStim_times;
+CR_OptoStim_times                                                            = all_var.CR_OptoStim_times;
+
+Hit_NoStim_times                                                           = all_var.Hit_NoStim_times;
+Miss_NoStim_times                                                          = all_var.Miss_NoStim_times;
+FA_NoStim_times                                                            = all_var.FA_NoStim_times;
+CR_NoStim_times                                                            = all_var.CR_NoStim_times;

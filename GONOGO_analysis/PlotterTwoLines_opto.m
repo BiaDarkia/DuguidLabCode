@@ -1,7 +1,7 @@
 function PlotterTwoLines_opto(RCheck, PlotType, Rpos, Var1, Var2,LinCol, xlbl, ylbl, ttl, startXAxis, num_days,Line_width, varargin)
 % Plot Background Color
 if RCheck
-    rectangle('Position', Rpos, 'FaceColor', [0.8 0.8 0.8], 'EdgeColor', [1 1 1]); hold on;
+    rectangle('Position', Rpos, 'FaceColor', [0.2 0.2 .2], 'EdgeColor', [1 1 1]); hold on;
 end
 
 % Check if two varibles have same length, they need to. 
