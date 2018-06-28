@@ -191,42 +191,16 @@ fig = figure;
 titlestring = sprintf([MouseName, '  Opto Stim - No Stim']);
 set(gcf,'numbertitle','off','name',titlestring);
 
-m = 3;
+m = 2;
 n = 1;
-
-
-ax1 = subplot(m,n,1); 
+subplot(m,n,1); 
 plot(DiscrIndex, '- o','Color', [.8, .8, .8], 'LineWidth', Width_lines); hold on;
 plot(B, '- m o', 'LineWidth', Width_lines);
 X = zeros(1,length(DiscrIndex)); x = ones(1,length(ToneEff_NOGO))*0.5;
-plot(X, '- k'); plot(x, 'k --'); plot(-x, 'k --'); 
+plot(X, '- w'); plot(x, 'w --'); plot(-x, 'w --'); 
 plot([firstOptoDay-0.5, firstOptoDay-0.5], [-1, 1],...
-    '--','Color', 'k',  'LineWidth', 0.5);
-set(gca,'XTickMode','manual'); set(gca,'XTick',[1:1:num_days]);axis([0, num_days, -1, 1]);
-legend('Discrimination index','Bias Index'); title('Discrimination Index, Bias ALL trials');
+    '--','Color', 'w',  'LineWidth', 0.5);
+set(gca,'XTickMode','manual'); set(gca,'XTick',[1:1:num_days]);
+legend('Discrimination index','Bias Index'); title('Discrimination Index');
 xlabel('Training Days'); ylabel('-');
 
-ax2 = subplot(m,n,2); 
-
-plot([firstOptoDay: num_days], DiscrIndex_OptoStim, '- o','Color', [.8, .8, .8], 'LineWidth', Width_lines); hold on;
-plot([firstOptoDay: num_days], B_OptoStim, '- m o', 'LineWidth', Width_lines);
-X = zeros(1,num_days ); x = ones(1,num_days)*0.5;
-plot(X, '- k'); plot(x, 'k --'); plot(-x, 'k --'); 
-plot([firstOptoDay-0.5, firstOptoDay-0.5], [-1, 1],...
-    '--','Color', 'k',  'LineWidth', 0.5);
-set(gca,'XTickMode','manual'); set(gca,'XTick',[1:1:num_days]); axis([0, num_days, -1, 1]);
- title('Discrimination Index, Bias - OptoStim');
-xlabel('Training Days'); ylabel('-');
-
-
-ax3 = subplot(m,n,3); 
-
-plot([firstOptoDay: num_days], DiscrIndex_NoStim, '- o','Color', [.8, .8, .8], 'LineWidth', Width_lines); hold on;
-plot([firstOptoDay: num_days], B_NoStim, '- m o', 'LineWidth', Width_lines);
-X = zeros(1,num_days ); x = ones(1,num_days)*0.5;
-plot(X, '- k'); plot(x, 'k --'); plot(-x, 'k --'); 
-plot([firstOptoDay-0.5, firstOptoDay-0.5], [-1, 1],...
-    '--','Color', 'k',  'LineWidth', 0.5);
-set(gca,'XTickMode','manual'); set(gca,'XTick',[1:1:num_days]); axis([0, num_days, -1, 1]);
- title('Discrimination Index, Bias - NoStim');
-xlabel('Training Days'); ylabel('-');
