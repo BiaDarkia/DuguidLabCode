@@ -205,6 +205,7 @@ for mouseID=mouseVec   % mouseID loops through the list of mice to analyse (mous
                     for t = 1 :length(tone_starts)
                         TrialVecs; % cut the data vecs to select just each trial and determine if its a Go or Nogo trial
                         TrialAnalysisV3; % See what happens during the trial
+                        afterOptostimTrials_effects;  % get performance on 1st, second and third trial after opto stim
                     end
                     
                     %% Check for empty vars

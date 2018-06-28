@@ -151,5 +151,11 @@ if dayID >= Mod2startday
         all_var.Miss_NoStim_times(1:length(Miss_times_NoStim'),dayID)                          = Miss_times_NoStim';
         all_var.FA_NoStim_times(1:length(FA_times_NoStim'),dayID)                              = FA_times_NoStim';
         all_var.CR_NoStim_times(1:length(CR_times_NoStim'),dayID)                              = CR_times_NoStim';
+        
+        all_var.postStim_hits(:, dayID) = postStim_hits;
+        all_var.postStim_fas(:, dayID) = postStim_fas;
+        all_var.postStim_misses(:, dayID) = postStim_misses;
+        all_var.postStim_crs(:, dayID) = postStim_crs;
+        
     end
 end

@@ -38,3 +38,9 @@ PE_ITI_OptoStim_times               = 0;
 PE_ITI_NoStim_times                 = 0; 
 
 
+opto_trials_record = zeros(1, 100);
+postStim_hits = zeros(3, 1);
+postStim_fas = zeros(3, 1);
+postStim_misses = zeros(3, 1);
+postStim_crs = zeros(3, 1);
+

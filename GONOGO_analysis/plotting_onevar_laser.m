@@ -24,7 +24,7 @@ function plotting_onevar_laser(var, var_opto, var_nopto, x, color, firstOptoDay,
     h(1).FaceColor = dark_shade; h(2).FaceColor = light_shade; 
 
     % Plot the ratio of no opto to opto trials to compare with var results
-    ratio = (num_optotrials / num_optotrials+ num_noptotrials) / 100;
+    ratio = (num_optotrials ./ (num_optotrials+ num_noptotrials));
     h2 = bar(x-0.01, [var(firstOptoDay:end)'.*ratio]',...
         0.41, 'stacked', 'FaceAlpha',.0, 'EdgeColor',edge_color,'LineWidth',1.5); 
     % h2(1).FaceColor = dark_shade; h2(2).FaceColor = light_shade;

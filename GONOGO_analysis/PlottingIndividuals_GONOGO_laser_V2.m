@@ -48,8 +48,8 @@ subplotheight = .075;
 % trials
 x0 = linspace(0, firstOptoDay, firstOptoDay+1);
 x = linspace(firstOptoDay, num_days, num_days-firstOptoDay+1);
-num_optostim_trials = Hit_OptoStim + Miss_OptoStim;
-num_nostim_trials = Hit_NoStim + Miss_NoStim;
+num_optostim_trials = all_var.num_OptoStimTrials(firstOptoDay:end);
+num_nostim_trials = all_var.num_trials(firstOptoDay:end);
 
 % Plotting Hits
 ax1 = subplot(m,n,1); 
@@ -130,39 +130,61 @@ fig = figure;
 titlestring = sprintf([MouseName, '  Opto Stim - No Stim']);
 set(gcf,'numbertitle','off','name',titlestring);
 
-m = 2;
+m = 4;
 n = 1;
 
 % Plotting tone efficiencies
-ax1 = subplot(m,n,2); 
+ax1 = subplot(m,n,1); 
 plot(ToneEff_GO(:, mouse_ID), '-ob', 'LineWidth',  2); hold on;
 plot(ToneEff_NOGO(:, mouse_ID), '-or', 'LineWidth',  2);
 plot([firstOptoDay-0.5, firstOptoDay-0.5], [0, 100],...
     '--','Color', 'w',  'LineWidth', 0.5);
 
 xlabel('Num Days'); ylabel('Tone Eff.'); title('Tone Efficiency');
-set(gca,'XTickMode','manual'); set(gca,'XTick',[1:1:num_days]);
+set(gca,'XTickMode','manual'); set(gca,'XTick',[1:1:num_days]);set(gca,'Color',[0.2, 0.2, 0.2]);
 
 
-ax2 = subplot(m,n,3);
+ax2 = subplot(m,n,4);
 labels = cell(num_days-firstOptoDay,1);
 for i=1:num_days-firstOptoDay+1
     labels{i} = [num2str(i+firstOptoDay-1)];
 end
 PlotterTwoLines_opto(1, 1,[0, 0, numOptoDays,100], tone_eff_GO_OptoStim(mouse_ID, :), tone_eff_GO_NoStim(mouse_ID, :), ...
-    [.2 .2 .9],' Opto Days', '%', 'Tone Efficiency', 0, numOptoDays,Line_width); hold on; 
+    [.2 .2 .9],' Opto Days', '%', 'Tone Efficiency Stim vs NoStim', 0, numOptoDays,Line_width); hold on; 
 PlotterTwoLines_opto(0, 1,[0, 0, numOptoDays,100], tone_eff_NOGO_OptoStim(mouse_ID, :), tone_eff_NOGO_NoStim(mouse_ID, :), ...
-    [.9 .2 .2],' Opto Days', '%', 'Tone Efficiency', 0, numOptoDays,Line_width);
+    [.9 .2 .2],' Opto Days', '%', 'Tone Efficiency Stim vs NoStim', 0, numOptoDays,Line_width);
 axis([0 numOptoDays 0 100]); set(gca, 'xticklabels', labels)
 
 
+
+% Plot TE of first second and third stim after opto stim
+postStim_gotrials = all_var.postStim_hits + all_var.postStim_misses;
+postStim_nogotrials = all_var.postStim_crs + all_var.postStim_fas;
+postStim_goTE = (all_var.postStim_hits./postStim_gotrials).*100;
+postStim_nogoTE = (all_var.postStim_crs./postStim_nogotrials).*100;
+
+ax3 = subplot(m,n,2);
+plot(postStim_goTE(1,:), '-o', 'Color',[0.2, 0.2, 1], 'LineWidth', 2, 'MarkerSize',8); hold on; 
+plot(postStim_goTE(2,:), '-o', 'Color',[0.2, 0.2, 0.7], 'LineWidth', 2, 'MarkerSize',8);
+plot(postStim_goTE(3,:), '-o', 'Color',[0.2, 0.2, 0.5], 'LineWidth', 2, 'MarkerSize',8);
+axis([0 num_days 0 100]); set(gca,'XTickMode','manual'); set(gca,'XTick',[1:1:num_days]);
+legend('First after Stim', 'Second', 'Third', 'Location', 'northwest')
+set(gca,'Color',[0.2, 0.2, 0.2]); title('First vs second and third trial after OptoStim (Go Tone Eff)');
+
+ax4 = subplot(m,n,3);
+plot(postStim_goTE(1,:), '-o', 'Color',[1, 0.2, 0.2], 'LineWidth', 2, 'MarkerSize',8); hold on; 
+plot(postStim_goTE(2,:), '-o', 'Color',[0.7, 0.2, 0.2], 'LineWidth', 2, 'MarkerSize',8);
+plot(postStim_goTE(3,:), '-o', 'Color',[0.5, 0.2, 0.2], 'LineWidth', 2, 'MarkerSize',8);
+axis([0 num_days 0 100]); set(gca,'XTickMode','manual'); set(gca,'XTick',[1:1:num_days]);
+legend('First after Stim', 'Second', 'Third', 'Location', 'northwest')
+set(gca,'Color',[0.2, 0.2, 0.2]); title('First vs second and third trial after OptoStim (NoGo Tone Eff)');
 
 %% third figure --> other vars
 fig = figure;
 titlestring = sprintf([MouseName, '  Opto Stim - No Stim']);
 set(gcf,'numbertitle','off','name',titlestring);
 
-m = 2;
+m = 3;
 n = 1;
 
 % Number of trials to next correct

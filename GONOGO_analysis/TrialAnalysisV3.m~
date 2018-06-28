@@ -6,8 +6,6 @@
 % By seeing when pushes happen and the context it is possible to accurately
 % reconstruct what happened during each trial. 
 %% Set up variables
-miss_trial = 0; CorrectRejection_trial = 0;
-
 % Check if there is a reward in the trial
 if isempty(find(trial_reward))
     RewCheck = 0;
@@ -87,6 +85,7 @@ end
 
 %% Check what happened during trial
 % What happened during response window (before first lever reset)
+miss_trial = 0;
 
 
 if needToAnalyse

@@ -148,5 +148,11 @@ all_var.Hit_NoStim_times                           = zeros(500, num_days);
 all_var.Miss_NoStim_times                          = zeros(500, num_days);
 all_var.FA_NoStim_times                            = zeros(500, num_days);
 all_var.CR_NoStim_times                            = zeros(500, num_days);
+
+all_var.postStim_hits    = zeros(3, num_days);
+all_var.postStim_fas  = zeros(3, num_days);
+all_var.postStim_misses     = zeros(3, num_days);
+all_var.postStim_crs  = zeros(3, num_days);
+        
 end
 
