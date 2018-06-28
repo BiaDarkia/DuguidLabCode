@@ -11,14 +11,11 @@ if ~isempty(mouse.name{mouseID})
     if ~exist('allfiles','var')
         if strcmp('Y','Y')
             filename=sprintf('%s_analysed.mat',mouse.name{mouseID});
-            summaryname = sprintf('%s_analysed_summary.mat',mouse.name{mouseID});
             %all_varname=strcat(allVarNamePathfolder,filename);
             
-            create_allvar_summary
+            
             
             save(filename,'all_var');
-            save(summaryname,'summary_allvar');
-
             fprintf('Saving all final variables to\n%s\n',filename);
         end
         
