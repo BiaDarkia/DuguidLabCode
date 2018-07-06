@@ -25,9 +25,9 @@ Reanalyse = 0;  % Not compatible with Opto option
 % saved the _analysed files for these mice. This option sometimes gives
 % problem, in which case run the analysis again but with "Reanalyse = 0". 
 
-CentralPartOfBehaviour = 0; % =1 to analyse only a give part of the training session (e.g. first 30 mins, see line 110). 
-        CutStart = 0.51; % 0.n where n is what % of the session you want to cut at the beginning (e.g. 0.1 --> cutting first 10% of session)
-        CutEnd = 1; % 0.n where n is what % of the session you want to cut at the end (e.g. 0.5 --> cutting last 50% of session)
+CentralPartOfBehaviour = 1; % =1 to analyse only a give part of the training session (e.g. first 30 mins, see line 110). 
+        CutStart = 0.01; % 0.n where n is what % of the session you want to cut at the beginning (e.g. 0.1 --> cutting first 10% of session)
+        CutEnd = 0.51; % 0.n where n is what % of the session you want to cut at the end (e.g. 0.5 --> cutting last 50% of session)
         % if CentralPartOfBehaviour = 1 the analysis will only consider the
         % portion of the ABF file between CutStart and CutEnd
 
@@ -95,6 +95,7 @@ for mouseID=mouseVec   % mouseID loops through the list of mice to analyse (mous
         old_var = load(checkname);  % load variables from data relative to previous analysis
         old_var = old_var.all_var; 
         ResaveAllVarGonogo % Merge the two sets of var
+        %ResaveAllVarOutputGonogo % Merge the two sets of var
     end
     
     %% For the current mouse, loop over single days
@@ -242,5 +243,6 @@ for mouseID=mouseVec   % mouseID loops through the list of mice to analyse (mous
     
     %% Save results
     saveAllVar_Gonogo(mouseID, mouse, all_var, AnalysedDir)
+    %saveAllVarOutput_Gonogo(mouseID, mouse, all_varOutput, AnalysedDir)
 end
 

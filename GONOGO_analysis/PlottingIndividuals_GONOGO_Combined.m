@@ -94,12 +94,12 @@ set(gca,'XTickMode','manual'); set(gca,'XTick',[1:2:lastNonOptoDay]); xlabel('Tr
 
 % Plotting Reaction Time
 subplot(m,n,7);  
-rectangle('Position', [0.5, 0, lastNonOptoDay-0.5, 4000], 'FaceColor', [0.8 0.8 0.8], 'EdgeColor', [1 1 1]); hold on;
-rectangle('Position', [lastNonOptoDay, 0,  RectangleWidth, 4000], 'FaceColor', [0.5 0.5 0.5], 'EdgeColor', [.6 .6 .6]);
+rectangle('Position', [0.5, 0, lastNonOptoDay-0.5, 3000], 'FaceColor', [0.8 0.8 0.8], 'EdgeColor', [1 1 1]); hold on;
+rectangle('Position', [lastNonOptoDay, 0,  RectangleWidth, 3000], 'FaceColor', [0.5 0.5 0.5], 'EdgeColor', [.6 .6 .6]);
 errorbar(Median_ReactTime_Hit(:, mouse_ID), Std_ReactTime_Hit(:, mouse_ID), '- b o', 'LineWidth', Width_lines);  hold on;
 errorbar( Median_ReactTime_FalseAlarm(:, mouse_ID),Std_ReactTime_FalseAlarm(:, mouse_ID), '- r o', 'LineWidth', Width_lines);
 xlabel(' Training days');  ylabel('mSec');
-axis([Mod2Start, lastNonOptoDay, 0, 4000]);
+axis([Mod2Start, lastNonOptoDay, 0, 3000]);
 set(gca,'XTickMode','manual'); set(gca,'XTick',[1:2:lastNonOptoDay]);grid on;
 title('Reaction Time'); legend('GO', 'NOGO','Location', 'NorthWest'); hold off;
 

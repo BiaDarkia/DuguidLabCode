@@ -108,10 +108,10 @@ ax6 = subplot(m,n,6);
 plot(Median_ReactTime_Hit, '-ob', 'LineWidth', 2); hold on; 
 plot(Median_ReactTime_FalseAlarm, '-or', 'LineWidth', 2);
 
-plot(x, 2000+median_reaction_time_Hit_OptoStim, '--ob', 'LineWidth', 1.5);
-plot(x, 2000+median_reaction_time_Hit_NoStim, '--ob', 'LineWidth', 1.5);
-plot(x, 2000+median_reaction_time_FalseAlarm_OptoStim, '--or', 'LineWidth', 1.5);
-plot(x, 2000+median_reaction_time_FalseAlarm_NoStim, '--or', 'LineWidth', 1.5);
+plot(x, 1000+median_reaction_time_Hit_OptoStim, '--ob', 'LineWidth', 1.5);
+plot(x, 1000+median_reaction_time_Hit_NoStim, '--ob', 'LineWidth', 1.5);
+plot(x, 1000+median_reaction_time_FalseAlarm_OptoStim, '--or', 'LineWidth', 1.5);
+plot(x, 1000+median_reaction_time_FalseAlarm_NoStim, '--or', 'LineWidth', 1.5);
 % 
 % PlotterTwoLines_opto(1, 2, [0, 0, numOptoDays,4000], median_reaction_time_Hit_OptoStim(mouse_ID ,:), median_reaction_time_Hit_NoStim(mouse_ID ,:), ...
 %     [.2 .2 .8],' Opto Days', 'mS', 'Reaction Time', 0, numOptoDays,Line_width, ...
@@ -120,7 +120,7 @@ plot(x, 2000+median_reaction_time_FalseAlarm_NoStim, '--or', 'LineWidth', 1.5);
 % PlotterTwoLines_opto(0, 2, [0, 0, numOptoDays,4000], median_reaction_time_FalseAlarm_OptoStim(mouse_ID ,:), median_reaction_time_FalseAlarm_NoStim(mouse_ID ,:), ...
 %     [.8 .2 .2],' Opto Days', 'mS', 'Reaction Time', 0, numOptoDays,Line_width,...
 %     std_reaction_time_FalseAlarm_OptoStim(mouse_ID ,:), std_reaction_time_FalseAlarm_NoStim(mouse_ID ,:), 0); hold on; 
-axis([0, num_days, 0, 4000]);
+axis([0, num_days, 0, 2000]);
 xlabel('Num Days'); ylabel('Reaction time'); title('Reaction Time');
 set(gca,'XTickMode','manual'); set(gca,'XTick',[1:1:num_days]);
 
